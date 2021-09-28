@@ -1,6 +1,6 @@
 # CarryMe-Smart-self-balancing-cart
 
-![image](https://user-images.githubusercontent.com/50642442/134984966-32736569-cf02-4ab4-ac8a-61b88869efd0.png)
+![Untitled](https://user-images.githubusercontent.com/50642442/135082275-61aa604b-c46e-4383-885a-40e70179e4a5.jpg)
 
 CarryME is a new smart self balancing cart that makes a quick grocery trip even quicker. With combination between self-balancing robot and computer vision algorithm the robot will be able to do the most important things, carry things securely and efficiently while tracking the user. 
 CarryME is an autonomous robot system that includes serval controllers and sensors which
