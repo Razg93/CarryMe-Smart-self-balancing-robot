@@ -1,0 +1,7 @@
+{
+     "RIGHT": 0,
+     "LEFT": 0,
+     "BACKWARD": 0,
+     "FORWARD": 0,
+     "NOTHING": 1
+}
