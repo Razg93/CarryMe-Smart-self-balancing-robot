@@ -63,7 +63,7 @@ setAngle = calcCn1(instSpeed - setSpeed);
   
 instSpeed= calcCn2(angle - setAngle);
 
-To turn the robot I'm attenuating the speed in one wheel, depending on the side it needs to turn. This way the robot keeps the balance as both wheels are reflecting the control system speed. Implementation looks like this:
+In order to turn the robot I'm attenuating the speed in one wheel, depending on the side it needs to turn. This way the robot keeps the balance as both wheels are reflecting the control system speed. Implementation looks like this:
 
  instSpeedL = instSpeedR = instSpeed;
  
