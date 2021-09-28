@@ -73,7 +73,7 @@ To turn the robot I'm attenuating the speed in one wheel, depending on the side 
  
  0 ≤ factorL ≤ 1,     0 ≤ factorR ≤ 1  
  
-To turn it around itself, what I did is giving an opposite offset speed to the wheels. With the wheels rotating symmetric speeds it will perform a spin and stay balanced, completing the implementation it will look this way:
+To perform spins, rotating in turn of itself, what I did is giving an opposite offset speed to the wheels. With the wheels rotating symmetric speeds it will perform a spin and stay balanced, completing the implementation it will look this way:
 
  motorSpeedL(instSpeedL * factorL + spinSpeed);
  
