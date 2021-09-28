@@ -57,7 +57,7 @@ lastError = error;
 For PID tuning I used a Bluetooth module which allows to adjust Kp,Ki,Kd for both the controllers in real time. This way you can immediately view the effects and reach the desired behavior for the robot. In this video you can see it successfully balanced for the first time .
 
 # Motion control
-Moving forward and backwards is quite easy with this PID cascade setup, you just have to give a set point to the first controller and it will calculate the appropriate leaning angle to reach that speed. Something like this:
+Moving forward and backward is quite easy with this PID cascade setup, you just have to give a set point to the first controller and it will calculate the appropriate leaning angle to reach that speed. Something like this:
 
 setAngle = calcCn1(instSpeed - setSpeed);
   
