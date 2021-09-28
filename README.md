@@ -2,11 +2,11 @@
 
 ![Untitled](https://user-images.githubusercontent.com/50642442/135082275-61aa604b-c46e-4383-885a-40e70179e4a5.jpg)
 
-CarryME is a new smart self balancing cart that makes a quick grocery trip even quicker. With combination between self-balancing robot and computer vision algorithm the robot will be able to do the most important things, carry things securely and efficiently while tracking the user. 
-CarryME is an autonomous robot system that includes serval controllers and sensors which
-detect the environment and help CarryMe to avoid obstacles and navigating autonomously.
-The input for the navigating the robot gets input from depth camera who can classify any objects and his distance from the robot.
-The goal of this project is to design a two-wheel balancing robot controlled via computer vision algorithm and can sense his environment.
+CarryME is a new smart self balancing cart that makes a quick grocery trip even quicker. With combination of self-balancing robot and computer vision algorithm the robot will be able to do the most important things, carry stuff securely and efficiently while tracking the user. 
+CarryME is an autonomous robot system that includes several controllers and sensors which
+detect the environment and help CarryMe to avoid obstacles and navigate autonomously.
+The robot gets input from depth camera that can classify any object and it's distance from the robot.
+The goal of this project is to design a two-wheel balancing robot controlled via computer vision algorithm enabling it to sense it's environment.
 
 # Key Components
 
@@ -33,10 +33,10 @@ converter is needed.
 
 # BALANCING CONTROL 
 PID
-Balancing control is performed by a PID cascade, like showed in the next picture. 
-This way is possible to balance the robot even if you move the center mass or run it in a ramp. 
+Balancing control is performed by a PID cascade, as showed in the next picture. 
+This way it is possible to balance the robot even if you move the center mass or run it in a ramp. 
 It will find a new balance angle that allows it to be balanced and stopped. 
-In fact both the controller are PI only, the derivative gain is set to 0 because it causes the robot to shake even with small gain.
+In fact both the controllers are PI only, the derivative gain is set to 0 because it causes the robot to shake even with small gain.
 
 ![image](https://user-images.githubusercontent.com/50642442/134984028-422dd8f7-1184-43fa-a301-5dcd271db9a1.png)
 
@@ -54,10 +54,10 @@ Cn = pTerm + iTerm + dTerm;
 
 lastError = error;
 
-For PID tuning I used a Bluetooth module which allows me to adjust Kp,Ki,Kd for both the controller in real time. This way you can immediately view the effects and reach the desired behavior for the robot. In this video you can see it successfully balanced for the first time .
+For PID tuning I used a Bluetooth module which allows to adjust Kp,Ki,Kd for both the controllers in real time. This way you can immediately view the effects and reach the desired behavior for the robot. In this video you can see it successfully balanced for the first time .
 
 # Motion control
-Moving forward an back is quite easy with this PID cascade setup, you just have to give a set point to the first controller and it will calculate the appropriate leaning angle to reach that speed. Something like this:
+Moving forward and backwards is quite easy with this PID cascade setup, you just have to give a set point to the first controller and it will calculate the appropriate leaning angle to reach that speed. Something like this:
 
 setAngle = calcCn1(instSpeed - setSpeed);
   
@@ -73,18 +73,18 @@ To turn the robot I'm attenuating the speed in one wheel, depending on the side 
  
  0 ≤ factorL ≤ 1,     0 ≤ factorR ≤ 1  
  
-To perform spins, rotating in turn of itself, what I do is to give an opposite offset speed to the wheels. With the wheels rotating symmetric speeds it will perform a spin and stays balanced, completing the implementation it will look like this:
+To turn around itself, what I did is giving an opposite offset speed to the wheels. With the wheels rotating symmetric speeds it will perform a spin and stay balanced, completing the implementation it will look this way:
 
  motorSpeedL(instSpeedL * factorL + spinSpeed);
  
  motorSpeedR(instSpeedL * factorR - spinSpeed); 
  
- If spinSpeed is positive the robot will spin clockwise, other way it will spin counter clockwise.
+ If spinSpeed is positive the robot will spin clockwise, otherwise it will spin counter clockwise.
  
  # Pose estimation - ML model
  
  ![image](https://user-images.githubusercontent.com/50642442/134986101-0bc2869a-da38-458b-af67-47df4e3b4681.png)
  
-Pose estimation refers to computer vision techniques that detect human figures in images and videos. The pose estimation models takes a processed camera image as the input and outputs information about keypoints. Using these deteceting points in the RGB image and depth image from RealSense camera, in this project I was able to calculate the distance in centimeters to a 33 keypoints in the human body.
+Pose estimation refers to computer vision techniques that detect human figures in images and videos. The pose estimation models take a processed camera image as the input and output information about keypoints. Using these deteceting points in the RGB image and depth image from RealSense camera, I was able to calculate the distance in centimeters to a 33 keypoints in the human body.
 For the full guide on this section click [here](https://github.com/Razg93/Skeleton-Tracking-using-RealSense-depth-camera). 
  
