@@ -1,4 +1,4 @@
-# CarryMe Smart self balancing Robot
+# Autonomous Self Balancing Robot 
 
 ![Untitled](https://user-images.githubusercontent.com/50642442/135082275-61aa604b-c46e-4383-885a-40e70179e4a5.jpg)
 
